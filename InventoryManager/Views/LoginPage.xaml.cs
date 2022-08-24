@@ -25,43 +25,25 @@ public partial class LoginPage : ContentPage
         password = Password.Text;
     }
 
-     async void onLogin(object sender, EventArgs args)
+    async void onLogin(object sender, EventArgs args)
     {
 
 
-        if (string.IsNullOrEmpty(userName))
-        {
-           await DisplayAlert("Alert", "Enter your Username", "OK");
-            return;
-        }
-        if (string.IsNullOrEmpty(password))
-        {
-            await DisplayAlert("Alert", "Enter your Password", "OK");
-            return;
-
-        }
-
         Models.User user = await UserService.GetUserByUserName(userName);
 
-        if (user == null)
+        if (string.IsNullOrEmpty(password))
         {
-            await DisplayAlert("Alert", "Account not found", "OK");
-            return;
+            await DisplayAlert("Alert", "Enter a Password", "OK");
 
         }
 
-        if (user.password == password)
-        {
-            await DisplayAlert("Alert", "Login is Successful", "OK");
-            return;
 
-        }
-        else
+        if (user.password == "Cosmos")
         {
-            await DisplayAlert("Alert", "Invalid Password", "OK");
-            return;
+            LoginBtn.Text = password;
+        };
+        LoginBtn.Text = password;
 
-        }
 
     }
 }
