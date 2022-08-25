@@ -89,6 +89,9 @@
 	  <MauiXaml Update="Views\LoginPage.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\FlyoutMenu.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Home.xaml.cs">

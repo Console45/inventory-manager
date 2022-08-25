@@ -4,17 +4,63 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:InventoryManager.Views"
-    Shell.FlyoutBehavior="Disabled"
-    Shell.NavBarIsVisible="False">
+    Shell.FlyoutBehavior="Locked"
+    Shell.NavBarIsVisible="False"
+    FlyoutBackgroundColor="#0776EC"
+    >
+<Shell.ItemTemplate>
+        <DataTemplate>
+           <VerticalStackLayout Margin="0,50,0,20">
+                 <Label
+                       Text="{Binding Title}"
+                       FontAttributes="Bold"
+                       FontSize="16"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"  />
 
-    <ShellContent
+            </VerticalStackLayout>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid
+                  HeightRequest="130">
+                <Label Text="Shoprite"
+                       TextColor="White"
+                       FontSize="40"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+            </Grid>            
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+        <ShellContent
+        Title="Login"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False"
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage" />
 
     <ShellContent
-        Title="Home"
+        Title="Dashboard"
         ContentTemplate="{DataTemplate local:HomePage}"
+        Shell.NavBarIsVisible="False"
         Route="HomePage" />
+    <ShellContent
+        Title="Products"
+        ContentTemplate="{DataTemplate local:ProductsPage}"
+        Shell.NavBarIsVisible="False"
+        Route="ProductsPage" />
+    <ShellContent
+        Title="Users"
+        ContentTemplate="{DataTemplate local:UsersPage}"
+        Shell.NavBarIsVisible="False"
+        Route="UsersPage" />
 
+     <Shell.FlyoutFooter>
+        <StackLayout Padding="40,0,40,100">
+            <Button Text="Log Out" HeightRequest="50" FontSize="16" TextColor="#0776EC" Clicked="onLogout" BackgroundColor="White" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
 </Shell>
 

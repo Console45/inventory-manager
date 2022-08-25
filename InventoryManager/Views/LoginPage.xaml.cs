@@ -52,7 +52,7 @@ public partial class LoginPage : ContentPage
 
         if (user.password == password)
         {
-            await DisplayAlert("Alert", "Login is Successful", "OK");
+            await Shell.Current.GoToAsync("HomePage", true, new Dictionary<string, object> { { "User",user } });
             return;
 
         }
