@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/InventoryManager/bin/Debug/net6.0-maccatalyst/InventoryManager.dll",
+            "program": "${workspaceFolder}/InventoryManager/bin/Debug/net6.0-maccatalyst/maccatalyst-x64/InventoryManager.dll",
             "args": [],
             "cwd": "${workspaceFolder}/InventoryManager",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

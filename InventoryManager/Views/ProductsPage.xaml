@@ -31,7 +31,7 @@
 <Border Background="White"
         WidthRequest="500"
         Padding="30"
-        x:Name="AddUser"
+        x:Name="AddProduct"
         VerticalOptions="Center"
         HeightRequest="550">
 <Border.StrokeShape>
@@ -88,6 +88,50 @@
 </Frame>
 <Button x:Name="CreateProduct"
         Text="Add Product"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Margin="0,30,0,0"
+        WidthRequest="400"
+        HeightRequest="60"
+        BackgroundColor="#0776EC"
+        FontSize="16"
+        TextColor="White" />
+</VerticalStackLayout>
+</Border>
+<Border Background="White"
+        WidthRequest="500"
+        Padding="30"
+        x:Name="AddCategory"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        HeightRequest="550">
+<Border.StrokeShape>
+<RoundRectangle CornerRadius="10" />
+</Border.StrokeShape>
+<VerticalStackLayout>
+<Label x:Name="title2"
+       FontAttributes="Bold"
+       HorizontalTextAlignment="Center"
+       FontSize="24"
+       Text="Add Category"
+       TextColor="#184780" />
+<Frame BorderColor="#0776EC"
+       BackgroundColor="Transparent"
+       WidthRequest="400"
+       Margin="0,50,0,30"
+       HeightRequest="50">
+<Entry x:Name="CategoryName"
+       Placeholder="Enter Category name"
+       IsSpellCheckEnabled="false"
+       IsTextPredictionEnabled="false"
+       PlaceholderColor="#184780"
+       BackgroundColor="Transparent"
+       TextColor="#184780"
+       WidthRequest="400"
+       HeightRequest="50" />
+</Frame>
+<Button x:Name="CreateCategory"
+        Text="Add Category"
         VerticalOptions="Center"
         HorizontalOptions="Center"
         Margin="0,30,0,0"
