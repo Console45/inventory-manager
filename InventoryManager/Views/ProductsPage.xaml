@@ -1,29 +1,103 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InventoryManager.Views.ProductsPage"
              BackgroundColor="#F2F5FA"
              Title="ProductsPage">
-    <VerticalStackLayout Spacing="25"
-                     Padding="100"
-                 >
-       
-             <FlexLayout JustifyContent="SpaceBetween" Direction="Row" AlignItems="Start" >
-                   <Label x:Name="Header"
-                       FontAttributes="Bold"
-                       FontSize="50" Text="Welcome" TextColor="#184780">
-                </Label>
-                  <Label x:Name="Page"
-                       FontAttributes="Bold"
-                       FontSize="40" Text="Products" TextColor="#184780">
-                </Label>
-
-            </FlexLayout>
-            <Line X1="0"
-                    X2="450"
-                  StrokeThickness="3"
+<VerticalStackLayout Spacing="25"
+                     Padding="100">
+<FlexLayout JustifyContent="SpaceBetween"
+            Direction="Row"
+            AlignItems="Start">
+<Label x:Name="Header"
+       FontAttributes="Bold"
+       FontSize="50"
+       Text="Welcome"
+       TextColor="#184780" />
+<Label x:Name="Page"
+       FontAttributes="Bold"
+       FontSize="40"
+       Text="Products"
+       TextColor="#184780" />
+</FlexLayout>
+<Line X1="0"
+      X2="450"
+      StrokeThickness="3"
       Stroke="#184780" />
-
-
-        </VerticalStackLayout>
+<FlexLayout JustifyContent="SpaceBetween"
+            Direction="Row"
+            AlignItems="Start"
+            Margin="30,100">
+<Border Background="White"
+        WidthRequest="500"
+        Padding="30"
+        x:Name="AddUser"
+        VerticalOptions="Center"
+        HeightRequest="550">
+<Border.StrokeShape>
+<RoundRectangle CornerRadius="10" />
+</Border.StrokeShape>
+<VerticalStackLayout>
+<Label x:Name="title1"
+       FontAttributes="Bold"
+       HorizontalTextAlignment="Center"
+       FontSize="24"
+       Text="Add Product"
+       TextColor="#184780" />
+<Frame BorderColor="#0776EC"
+       BackgroundColor="Transparent"
+       WidthRequest="400"
+       Margin="0,50,0,30"
+       HeightRequest="50">
+<Entry x:Name="ProductName"
+       Placeholder="Enter Product name"
+       IsSpellCheckEnabled="false"
+       IsTextPredictionEnabled="false"
+       PlaceholderColor="#184780"
+       BackgroundColor="Transparent"
+       TextColor="#184780"
+       WidthRequest="400"
+       HeightRequest="50" />
+</Frame>
+<Frame BorderColor="#0776EC"
+       BackgroundColor="Transparent"
+       WidthRequest="400"
+       Margin="0,20,0,30"
+       HeightRequest="50">
+<Entry x:Name="Amount"
+       IsSpellCheckEnabled="false"
+       IsTextPredictionEnabled="false"
+       Placeholder="Enter amount"
+       PlaceholderColor="#184780"
+       BackgroundColor="Transparent"
+       TextColor="#184780"
+       WidthRequest="400"
+       HeightRequest="50" />
+</Frame>
+<Frame BorderColor="#0776EC"
+       BackgroundColor="Transparent"
+       WidthRequest="400"
+       Margin="0,20,0,30"
+       HeightRequest="50">
+<Picker x:Name="Picker"
+        HeightRequest="50"
+        WidthRequest="400"
+        TitleColor="#184780"
+        TextColor="#184780"
+        Title="Select a Category" />
+</Frame>
+<Button x:Name="CreateProduct"
+        Text="Add Product"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Margin="0,30,0,0"
+        WidthRequest="400"
+        HeightRequest="60"
+        BackgroundColor="#0776EC"
+        FontSize="16"
+        TextColor="White" />
+</VerticalStackLayout>
+</Border>
+</FlexLayout>
+</VerticalStackLayout>
 </ContentPage>

@@ -12,6 +12,9 @@ namespace InventoryManager.Models
 
         public int categoryId { get; set; }
 
+        public DateTime date { get; set; }
+
+
     }
 }
 
