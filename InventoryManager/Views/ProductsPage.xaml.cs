@@ -21,7 +21,13 @@ public partial class ProductsPage : ContentPage
     {
         products = await ProductService.GetProducts();
         categories = await CategoryService.GetCategories();
-        Picker.ItemsSource = categories;
+        List<string> categoryNames = new List<string>();
+        for( var i =0; i < categories.Count(); i++)
+        {
+            categoryNames.Add(categories[i].name);
+
+        }
+        Picker.ItemsSource = categoryNames;
     }
 
     async void addCategory(object sender, EventArgs args)
@@ -40,6 +46,7 @@ public partial class ProductsPage : ContentPage
         if(category != null)
         {
             await DisplayAlert("Alert", "Category Already Exist", "OK");
+            return;
         }
 
         int res = await CategoryService.AddCategory(new Category() { name = name });
@@ -48,7 +55,7 @@ public partial class ProductsPage : ContentPage
         {
             await DisplayAlert("Alert", "Category Added Successfully", "OK");
             run();
-
+            return;
 
         }
         else
