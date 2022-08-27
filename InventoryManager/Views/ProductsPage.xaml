@@ -47,7 +47,7 @@
 <Frame BorderColor="#0776EC"
        BackgroundColor="Transparent"
        WidthRequest="400"
-       Margin="0,50,0,30"
+       Margin="0,50,0,20"
        HeightRequest="50">
 <Entry x:Name="ProductName"
        Placeholder="Enter Product name"
@@ -62,7 +62,22 @@
 <Frame BorderColor="#0776EC"
        BackgroundColor="Transparent"
        WidthRequest="400"
-       Margin="0,20,0,30"
+       Margin="0,10,0,20"
+       HeightRequest="50">
+<Entry x:Name="ProductQuantity"
+       Placeholder="Enter Product quantity"
+       IsSpellCheckEnabled="false"
+       IsTextPredictionEnabled="false"
+       PlaceholderColor="#184780"
+       BackgroundColor="Transparent"
+       TextColor="#184780"
+       WidthRequest="400"
+       HeightRequest="50" />
+</Frame>
+<Frame BorderColor="#0776EC"
+       BackgroundColor="Transparent"
+       WidthRequest="400"
+       Margin="0,10,0,20"
        HeightRequest="50">
 <Entry x:Name="Amount"
        IsSpellCheckEnabled="false"
@@ -77,7 +92,7 @@
 <Frame BorderColor="#0776EC"
        BackgroundColor="Transparent"
        WidthRequest="400"
-       Margin="0,20,0,30"
+       Margin="0,10,0,20"
        HeightRequest="50">
 <Picker x:Name="Picker"
         HeightRequest="50"
@@ -108,7 +123,7 @@
 <Border.StrokeShape>
 <RoundRectangle CornerRadius="10" />
 </Border.StrokeShape>
-<VerticalStackLayout>
+<VerticalStackLayout VerticalOptions="Center">
 <Label x:Name="title2"
        FontAttributes="Bold"
        HorizontalTextAlignment="Center"
@@ -137,6 +152,7 @@
         Margin="0,30,0,0"
         WidthRequest="400"
         HeightRequest="60"
+        Clicked="addCategory"
         BackgroundColor="#0776EC"
         FontSize="16"
         TextColor="White" />

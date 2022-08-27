@@ -15,6 +15,8 @@ public static class MauiProgram
 			});
 
         builder.Services.AddSingleton<UserService>();
+		builder.Services.AddSingleton<CategoryService>();
+		builder.Services.AddSingleton<ProductService>();
 
 
 		return builder.Build();

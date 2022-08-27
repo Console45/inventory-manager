@@ -1,4 +1,6 @@
 
+using System;
+using System.Diagnostics;
 using InventoryManager.Models;
 using SQLite;
 
@@ -26,6 +28,13 @@ namespace InventoryManager.Services
         {
             var database = await createTable();
             return await database.Table<Product>().ToListAsync();
+
+        }
+
+        public static async Task<Category> GetProductByName(string name)
+        {
+            var database = await createTable();
+            return await database.FindWithQueryAsync<Category>("Select * from Product Where name = ?", name);
 
         }
 
