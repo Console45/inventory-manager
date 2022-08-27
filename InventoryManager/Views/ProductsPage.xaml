@@ -4,7 +4,8 @@
              x:Class="InventoryManager.Views.ProductsPage"
              BackgroundColor="#F2F5FA"
              Title="ProductsPage">
-<VerticalStackLayout Spacing="25"
+<ScrollView>
+        <VerticalStackLayout Spacing="25"
                      Padding="100">
 <FlexLayout JustifyContent="SpaceBetween"
             Direction="Row"
@@ -159,5 +160,51 @@
 </VerticalStackLayout>
 </Border>
 </FlexLayout>
+
+     <Border Background="#0776EC"
+        WidthRequest="1000"
+        Padding="30"
+        VerticalOptions="Center"
+        HeightRequest="600">
+<Border.StrokeShape>
+<RoundRectangle CornerRadius="10" />
+</Border.StrokeShape>
+<VerticalStackLayout>
+<Label x:Name="title3"
+       FontAttributes="Bold"
+       HorizontalTextAlignment="Center"
+       FontSize="24"
+       Text="Products"
+       TextColor="White" />
+<CollectionView Margin="50"
+                x:Name="ProductsView">
+<CollectionView.ItemTemplate>
+<DataTemplate>
+<FlexLayout JustifyContent="SpaceBetween"
+            Direction="Row"
+            AlignItems="Center">
+<Label TextColor="White"
+       HorizontalTextAlignment="Center"
+       Margin="0,30"
+       FontSize="20"
+       Text="{Binding name}" />
+<Label TextColor="White"
+       HorizontalTextAlignment="Center"
+       Margin="0,30"
+       FontSize="20"
+       Text="{Binding price}" />
+<Label TextColor="White"
+       HorizontalTextAlignment="Center"
+       Margin="0,30"
+       FontSize="20"
+       Text="{Binding quantity}" />
+</FlexLayout>
+</DataTemplate>
+</CollectionView.ItemTemplate>
+</CollectionView>
 </VerticalStackLayout>
+</Border>
+</VerticalStackLayout>
+
+    </ScrollView>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using InventoryManager.Models;
+﻿using System.Data;
+using InventoryManager.Models;
 using InventoryManager.Services;
 
 namespace InventoryManager.Views;
@@ -7,6 +8,7 @@ public partial class ProductsPage : ContentPage
 {
     public static List<Product> products { get; set; }
     public static List<Category> categories { get; set; }
+    public string category;
     public ProductsPage()
     {
         InitializeComponent();
@@ -27,7 +29,19 @@ public partial class ProductsPage : ContentPage
             categoryNames.Add(categories[i].name);
 
         }
+        ProductsView.ItemsSource = products;
         Picker.ItemsSource = categoryNames;
+    }
+
+    void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+    {
+        var picker = (Picker)sender;
+        int selectedIndex = picker.SelectedIndex;
+
+        if (selectedIndex != -1)
+        {
+            category = (string)picker.ItemsSource[selectedIndex];
+        }
     }
 
     async void addCategory(object sender, EventArgs args)
