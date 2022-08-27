@@ -4,10 +4,26 @@
              x:Class="InventoryManager.Views.ProductsPage"
              BackgroundColor="#F2F5FA"
              Title="ProductsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <VerticalStackLayout Spacing="25"
+                     Padding="100"
+                 >
+       
+             <FlexLayout JustifyContent="SpaceBetween" Direction="Row" AlignItems="Start" >
+                   <Label x:Name="Header"
+                       FontAttributes="Bold"
+                       FontSize="50" Text="Welcome" TextColor="#184780">
+                </Label>
+                  <Label x:Name="Page"
+                       FontAttributes="Bold"
+                       FontSize="40" Text="Products" TextColor="#184780">
+                </Label>
+
+            </FlexLayout>
+            <Line X1="0"
+                    X2="450"
+                  StrokeThickness="3"
+      Stroke="#184780" />
+
+
+        </VerticalStackLayout>
 </ContentPage>

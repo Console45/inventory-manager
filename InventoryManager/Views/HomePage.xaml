@@ -3,28 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="#F2F5FA"
              x:Class="InventoryManager.Views.HomePage">
-<ScrollView>
-<VerticalStackLayout Spacing="25"
-                     Padding="30,0"
-                     VerticalOptions="Center">
-<Image Source="dotnet_bot.png"
-       SemanticProperties.Description="Cute dot net bot waving hi to you!"
-       HeightRequest="200"
-       HorizontalOptions="Center" />
-<Label Text="Hello, World!"
-       SemanticProperties.HeadingLevel="Level1"
-       FontSize="32"
-       HorizontalOptions="Center" />
-<Label Text="Welcome to UI"
-       SemanticProperties.HeadingLevel="Level2"
-       SemanticProperties.Description="Welcome to U I"
-       FontSize="18"
-       HorizontalOptions="Center" />
-<Button x:Name="CounterBtn"
-        Text="Click me"
-        SemanticProperties.Hint="Counts the number of times you click"
-        Clicked="OnCounterClicked"
-        HorizontalOptions="Center" />
-</VerticalStackLayout>
-</ScrollView>
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+                     Padding="100"
+                 >
+       
+             <FlexLayout JustifyContent="SpaceBetween" Direction="Row" AlignItems="Start" >
+                   <Label x:Name="Header"
+                       FontAttributes="Bold"
+                       FontSize="50" Text="Welcome" TextColor="#184780">
+                </Label>
+                  <Label x:Name="Page"
+                       FontAttributes="Bold"
+                       FontSize="40" Text="Dashboard" TextColor="#184780">
+                </Label>
+
+            </FlexLayout>
+            <Line X1="0"
+                  X2="450"
+                  StrokeThickness="3"
+      Stroke="#184780" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

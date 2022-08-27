@@ -2,39 +2,39 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InventoryManager.Views.LoginPage"
+             FlyoutItem.IsVisible="False"
+             Shell.FlyoutBehavior="Disabled"
              BackgroundColor="#0776EC">
-    <FlexLayout AlignItems="Center"
+<FlexLayout AlignItems="Center"
             JustifyContent="Center">
-        <VerticalStackLayout Margin="20">
-            <Label FontSize="50"
+<VerticalStackLayout Margin="20">
+<Label FontSize="50"
        Text="Login"
        TextColor="White"
        HorizontalOptions="Center"
        Margin="0,0,0,50" />
-
-
-            <Frame BorderColor="White" BackgroundColor="Transparent"  WidthRequest="400"
-        Margin="0,0,0,30"
+<Frame BorderColor="White"
+       BackgroundColor="Transparent"
+       WidthRequest="400"
+       Margin="0,0,0,30"
        HeightRequest="50">
-                <Entry x:Name="UserName"
+<Entry x:Name="UserName"
        Placeholder="Enter Username"
        IsSpellCheckEnabled="false"
        IsTextPredictionEnabled="false"
        PlaceholderColor="White"
        BackgroundColor="Transparent"
-      TextChanged="onUserNameTextChange"
+       TextChanged="onUserNameTextChange"
        TextColor="White"
-        WidthRequest="400"
-       HeightRequest="50"
-      
-       />
-            </Frame>
-
-            <Frame
-                BorderColor="White" BackgroundColor="Transparent"  WidthRequest="400"
-        Margin="0,0,0,30"
+       WidthRequest="400"
+       HeightRequest="50" />
+</Frame>
+<Frame BorderColor="White"
+       BackgroundColor="Transparent"
+       WidthRequest="400"
+       Margin="0,0,0,30"
        HeightRequest="50">
-                <Entry x:Name="Password"
+<Entry x:Name="Password"
        Placeholder="Enter Password"
        IsPassword="true"
        WidthRequest="400"
@@ -42,10 +42,9 @@
        HeightRequest="50"
        TextColor="White"
        PlaceholderColor="White" />
-
-            </Frame>
-
-            <Button x:Name="LoginBtn" Text="Login"
+</Frame>
+<Button x:Name="LoginBtn"
+        Text="Login"
         VerticalOptions="Center"
         HorizontalOptions="Center"
         Margin="0,30,0,0"
@@ -55,6 +54,6 @@
         FontSize="16"
         Clicked="onLogin"
         TextColor="#0776EC" />
-        </VerticalStackLayout>
-    </FlexLayout>
+</VerticalStackLayout>
+</FlexLayout>
 </ContentPage>

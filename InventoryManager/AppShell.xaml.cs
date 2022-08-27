@@ -15,7 +15,8 @@ public partial class AppShell : Shell
 
     async void onLogout(object sender, EventArgs args)
     {
-        await Shell.Current.GoToAsync("LoginPage");
+        await Shell.Current.GoToAsync("LoginPage",true);
+        Preferences.Clear();
 
     }
 }

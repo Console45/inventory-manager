@@ -29,6 +29,7 @@ public partial class LoginPage : ContentPage
     {
 
 
+
         if (string.IsNullOrEmpty(userName))
         {
            await DisplayAlert("Alert", "Enter your Username", "OK");
@@ -46,13 +47,16 @@ public partial class LoginPage : ContentPage
         if (user == null)
         {
             await DisplayAlert("Alert", "Account not found", "OK");
+
             return;
 
         }
 
         if (user.password == password)
         {
-            await Shell.Current.GoToAsync("HomePage", true, new Dictionary<string, object> { { "User",user } });
+            Preferences.Set("User", user.userName);
+            Preferences.Set("Role", user.role.ToString());
+            await Shell.Current.GoToAsync("HomePage", true);
             return;
 
         }

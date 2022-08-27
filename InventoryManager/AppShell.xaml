@@ -11,10 +11,12 @@
 <Shell.ItemTemplate>
         <DataTemplate>
            <VerticalStackLayout Margin="0,50,0,20">
+              
                  <Label
                        Text="{Binding Title}"
                        FontAttributes="Bold"
                        FontSize="16"
+                       TextColor="White"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Center"  />
 
