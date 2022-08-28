@@ -31,10 +31,10 @@ namespace InventoryManager.Services
 
         }
 
-        public static async Task<Category> GetProductByName(string name)
+        public static async Task<Product> GetProductByName(string name)
         {
             var database = await createTable();
-            return await database.FindWithQueryAsync<Category>("Select * from Product Where name = ?", name);
+            return await database.FindWithQueryAsync<Product>("Select * from Product Where name = ?", name);
 
         }
 

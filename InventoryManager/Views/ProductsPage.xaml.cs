@@ -8,7 +8,7 @@ public partial class ProductsPage : ContentPage
 {
     public static List<Product> products { get; set; }
     public static List<Category> categories { get; set; }
-    public string category;
+    public string categoryName;
     public ProductsPage()
     {
         InitializeComponent();
@@ -40,7 +40,7 @@ public partial class ProductsPage : ContentPage
 
         if (selectedIndex != -1)
         {
-            category = (string)picker.ItemsSource[selectedIndex];
+            categoryName = (string)picker.ItemsSource[selectedIndex];
         }
     }
 
@@ -80,5 +80,71 @@ public partial class ProductsPage : ContentPage
 
     }
 
+ async  void addProduct(object sender, EventArgs args)
+    {
+        string name = ProductName.Text;
+        int quantity = Convert.ToInt32(ProductQuantity.Text);
+        double price = Convert.ToDouble(ProductPrice.Text);
+        int categoryId;
+
+        if (string.IsNullOrEmpty(name))
+        {
+            await DisplayAlert("Alert", "Enter Product Name", "OK");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(ProductQuantity.Text))
+        {
+            await DisplayAlert("Alert", "Enter Product Quantity", "OK");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(ProductPrice.Text))
+        {
+            await DisplayAlert("Alert", "Enter Product Price", "OK");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(categoryName))
+        {
+            await DisplayAlert("Alert", "Enter Product Category", "OK");
+            return;
+        }
+
+        Product product = await ProductService.GetProductByName(name);
+
+        if(product != null)
+        {
+            await DisplayAlert("Alert", "Product Already Exist", "OK");
+            return;
+        }
+        Category category = await CategoryService.GetCategoryByName(categoryName);
+
+        if(category == null)
+        {
+            await DisplayAlert("Alert", "Category not found", "OK");
+            return;
+        }
+
+        categoryId = category.id;
+
+        int res = await ProductService.AddProduct(new Product() { categoryId = categoryId, name = name, price = price, quantity = quantity });
+
+
+        if (res == 1)
+        {
+            await DisplayAlert("Alert", "Product Added Successfully", "OK");
+            run();
+            return;
+
+        }
+        else
+        {
+            await DisplayAlert("Alert", "Failed to add product", "OK");
+
+        }
+
+
+    }
 
 }
